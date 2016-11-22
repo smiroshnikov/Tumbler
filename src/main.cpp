@@ -1,4 +1,7 @@
 // put the whole SFML folder into minGW folder with libs and shit ...
+// importing not the whole Graphics didn't work
+// had to tweak CMAKE with -static flag only
+// was missing https://upyourgears.ru/files/libz.a , no idea if that was 64 or 32 bit
 
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics.hpp>
