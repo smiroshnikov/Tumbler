@@ -5,11 +5,43 @@
 
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics.hpp>
+#include <iostream>
+
+using namespace std; // Have a look here, go to nub tut... stop running
+
+class Builder
+{
+    public:
+        string name;
+        int age;
+        int life_force;
+
+    void build()
+            {life_force-=10;
+             cout <<"Tuk tuk tuk";};
+
+    void eat()
+        {life_force+=10;};
+
+    void information(){
+        cout << "My name is " << name <<".I am "<<age<<endl;
+    }
+
+
+
+};
+
 
 
 int main(int argc, char** argv) {
 
     sf::RenderWindow window(sf::VideoMode(1080,720,32),"Scuko!");
+    Builder bob;
+    bob.name = "Bob";
+    bob.age = 57;
+    bob.information();
+    bob.build();
+
 
     while (window.isOpen()){
         sf::Event event;
