@@ -9,33 +9,34 @@
 
 using namespace std; // Have a look here, go to nub tut... stop running
 
-class Builder
-{
-    public:
-        string name;
-        int age;
-        int life_force;
+class Human {
+public:
+    string name;
+    int age;
+    int life_force;
+};
 
-    void build()
-            {life_force-=10;
-             cout <<"Tuk tuk tuk";};
 
-    void eat()
-        {life_force+=10;};
+class Builder : public Human {
 
-    void information(){
-        cout << "My name is " << name <<".I am "<<age<<endl;
+public:
+    void build() {
+        life_force -= 10;
+        cout << "Tuk tuk tuk";
+    };
+
+public:
+    void information() {
+        cout << "My name is " << name << ".I am " << age << endl;
     }
-
 
 
 };
 
 
+int main(int argc, char **argv) {
 
-int main(int argc, char** argv) {
-
-    sf::RenderWindow window(sf::VideoMode(1080,720,32),"Scuko!");
+    sf::RenderWindow window(sf::VideoMode(1080, 720, 32), "Scuko!");
     Builder bob;
     bob.name = "Bob";
     bob.age = 57;
@@ -43,10 +44,10 @@ int main(int argc, char** argv) {
     bob.build();
 
 
-    while (window.isOpen()){
+    while (window.isOpen()) {
         sf::Event event;
-        while (window.pollEvent(event)){
-            if(event.type == sf::Event::Closed){
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
                 window.close();
             }
         }
