@@ -14,7 +14,7 @@ using namespace std; // Have a look here, go to nub tut... stop running
 //using namespace sf;
 
 constexpr int windowWidth{1024}, windowHeight{768};
-constexpr float ballRadius{10.f}, ballVelocity(3.f);
+constexpr float ballRadius{5.f}, ballVelocity(1.f);
 
 struct Ball {
     // SFML circle shape is used
@@ -45,8 +45,6 @@ int main(int argc, char **argv) {
     // Game window
     sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight, 32), "Scuko!");
     window.setFramerateLimit(60);
-
-
     // Game loop
     while (window.isOpen()) { ;
         window.clear(sf::Color::Black);
